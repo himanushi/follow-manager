@@ -48,7 +48,7 @@ class TwitterClient
   def not_follow_me_all
     raise Error if me_id.nil?
 
-    not_follow_users = not_followers(me_id)[..5]
+    not_follow_users = not_followers(me_id)
     not_follow_users.select do |user|
       not_follow_me?(user['id'])
     end
